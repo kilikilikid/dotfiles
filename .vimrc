@@ -1,4 +1,14 @@
+" make sure vim-plug is installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source "~/.vimrc"
+endif
+
 set encoding=utf8
+
+" alert bell off
+set belloff=all
 
 " highlight cursor col and line
 set cursorcolumn
