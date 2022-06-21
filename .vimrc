@@ -84,10 +84,17 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 
+" for vim-commentary:
 " change comment string for c cpp
 autocmd FileType c,cpp set commentstring=//\ %s
 " change comment string for R
 autocmd FileType r set commentstring=#\ %s
+
+" for ultisnips and vim-snippets:
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-l>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnips"]
