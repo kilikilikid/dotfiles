@@ -1,0 +1,17 @@
+snippet ltcc "leetcode cpp framework"
+#include <iostream>
+
+// using namespace std;
+
+${1:void} ${2:funName}(${3:argc} ${4:input});
+
+int main() {
+    $3 $4;
+    std::cout << $2($4) << std::endl;
+    return 0;
+}
+
+$1 $2($3 $4) {
+    
+}
+endsnippet

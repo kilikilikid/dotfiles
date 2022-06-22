@@ -6,7 +6,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 set encoding=utf8
-
+set mouse=a
 " alert bell off
 set belloff=all
 
@@ -97,4 +97,4 @@ autocmd FileType r set commentstring=#\ %s
 " for ultisnips and vim-snippets:
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsListSnippets="<c-l>"
-let g:UltiSnipsSnippetDirectories=[$HOME.'.vim/plugged/vim-snippets/UltiSnips', $HOME.'.vim/plugged/vim-snippets/snippets',$HOME.'/mysnips/']
+let g:UltiSnipsSnippetDirectories=[$HOME.'.vim/plugged/vim-snippets/UltiSnips', $HOME.'.vim/plugged/vim-snippets/snippets',$HOME.'/dotfiles/mysnips/']
