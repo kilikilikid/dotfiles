@@ -1,9 +1,14 @@
-" make sure vim-plug is installed
+" Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source "~/.vimrc"
 endif
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+    \| PlugInstall --sync | source $MYVIMRC
+\| endif
 
 set encoding=utf8
 set mouse=a
@@ -29,7 +34,8 @@ if has("autocmd")
 endif
 
 set nocompatible
-set ts=4
+set tabstop=4
+set softtabstop=4
 " map leader to space
 let mapleader = " "
 
@@ -66,7 +72,17 @@ set incsearch
 set history=500
 
 set autoindent
-set cindent
+"set cindent
+set smartindent
+
+" give more space for displaying messages.
+set cmdheight=2
+
+set ignorecase
+set smartcase
+
+set signcolumn=auto
+
 
 " Plugins related are in below
 " ------------------------------------------------------------------------------
@@ -82,11 +98,15 @@ call plug#begin()
 " Make sure you use single quotes
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+"Plug 'gruvbox-community/gruvbox'
 call plug#end()
+
+"colorscheme gruvbox
 
 " for vim-commentary:
 " change comment string for c cpp
