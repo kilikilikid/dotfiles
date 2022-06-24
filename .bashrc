@@ -122,4 +122,5 @@ alias t='tmux new-session'
 alias tl='tmux list-sessions'
 alias ta='tmux attach -t'
 alias tk='tmux kill-session -t'
-
+alias sup='sudo apt update'
+alias sug='sudo apt upgrade'
